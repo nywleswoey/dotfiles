@@ -54,6 +54,9 @@ in
   };
 
   # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
+  home.file.".gitconfig".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/gitconfig/.gitconfig";
+
   home.file.".config/wezterm".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/wezterm";
   home.file.".config/nvim".source =
