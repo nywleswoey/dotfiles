@@ -46,7 +46,6 @@
       "jq"
       "libpq"
       "mise"
-      "opensuperwhisper"
       "redis"
       "rtk"
       "uv"
@@ -55,6 +54,7 @@
     casks = [
       "wezterm"
       "claude-code"
+      "opensuperwhisper"
     ];
   };
 }
