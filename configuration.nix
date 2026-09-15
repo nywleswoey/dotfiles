@@ -46,6 +46,7 @@
       "jq"
       "libpq"
       "mise"
+      "opensuperwhisper"
       "redis"
       "rtk"
       "uv"
