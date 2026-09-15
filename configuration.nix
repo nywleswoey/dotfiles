@@ -36,7 +36,20 @@
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
     brews = [
+      "colima"
+      "docker"
+      "docker-buildx"
+      "docker-compose"
+      "docker-credential-helper-ecr"
+      "gh"
       "herdr"
+      "jq"
+      "libpq"
+      "mise"
+      "redis"
+      "rtk"
+      "uv"
+      "zsh"
     ];
     casks = [
       "wezterm"
