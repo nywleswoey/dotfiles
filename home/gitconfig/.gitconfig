@@ -1,0 +1,32 @@
+[user]
+	name = nywleswoey
+	email = sgfjords@gmail.com
+	signingkey = ~/.ssh/git-signing-personal.pub
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore
+
+[push]
+	autoSetupRemote = true
+
+[init]
+	defaultBranch = main
+
+[branch]
+	sort = -committerdate
+
+[pull]
+	rebase = true
+
+[rerere]
+	enabled = true
