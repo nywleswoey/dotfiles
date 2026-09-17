@@ -26,8 +26,23 @@ in
     enable = true;
     autosuggestion.enable = true;      # ghost text from history
     syntaxHighlighting.enable = true;  # commands turn green when valid
+    history = {
+      size = 100000;
+      save = 100000;
+      extended = true;                 # timestamp + duration per command
+      ignoreAllDups = true;
+      saveNoDups = true;
+      expireDuplicatesFirst = true;
+      findNoDups = true;
+    };
     initContent = ''
       bindkey '^f' autosuggest-accept
+      setopt HIST_REDUCE_BLANKS
+      setopt HIST_VERIFY            # `!!` expands onto the line instead of running blind
+      # Don't exit the shell on EOF. Some installers (pnpm and its supply-chain
+      # policy check) consume and close stdin; without this the terminal closes
+      # mid-install and the host app reports it as a launch failure.
+      setopt IGNORE_EOF
     '';
     shellAliases = {
       ".." = "cd ..";
@@ -35,6 +50,7 @@ in
       push = "git push";
       pull = "git pull";
       m = "git switch main";
+      g = "git";
     };
   };
 
