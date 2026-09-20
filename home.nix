@@ -56,6 +56,8 @@ in
     shellAliases = {
       ".." = "cd ..";
       add = "git add .";
+      ga = "git add";
+      gc = "git commit -v";
       push = "git push";
       pull = "git pull";
       m = "git switch main";
