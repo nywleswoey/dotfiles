@@ -21,6 +21,11 @@ in
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
+  # ~/.claude/settings.json is untracked (it holds a live API token), so this
+  # env var can't live there. Claude Code reads it from the shell env instead.
+  # ponytail: login-shell only; move to an activation script that merges the key
+  # into ~/.claude/settings.json if a GUI-launched Claude ever needs it.
+  home.sessionVariables.CLAUDE_CODE_ENABLE_FUNCTION_HOOKS = "1";
 
   programs.zsh = {
     enable = true;
@@ -81,6 +86,9 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
+  # Untracked (holds a live API token) - the symlink dangles on a fresh clone
+  # until Claude Code writes its own. That's fine: the settings this repo cares
+  # about are set via home.sessionVariables above.
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
 
