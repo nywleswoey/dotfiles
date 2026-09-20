@@ -43,6 +43,10 @@ in
       # policy check) consume and close stdin; without this the terminal closes
       # mid-install and the host app reports it as a launch failure.
       setopt IGNORE_EOF
+
+      # Secret lives in the login Keychain, not in this repo.
+      # Store once: security add-generic-password -s typesafe-api-key -a "$USER" -w
+      export TYPESAFE_API_KEY="$(security find-generic-password -s typesafe-api-key -w 2>/dev/null)"
     '';
     shellAliases = {
       ".." = "cd ..";
