@@ -62,6 +62,8 @@ in
       pull = "git pull";
       m = "git switch main";
       g = "git";
+      gpf = "git push --force-with-lease";
+      glo = "git log --oneline";
     };
   };
 
