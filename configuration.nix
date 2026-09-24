@@ -50,6 +50,7 @@
       "rtk"
       "uv"
       "zsh"
+      "apm"
     ];
     casks = [
       "wezterm"
