@@ -64,6 +64,7 @@ in
       g = "git";
       gpf = "git push --force-with-lease";
       glo = "git log --oneline";
+      grbi = "git rebase --interactive";
     };
   };
 
