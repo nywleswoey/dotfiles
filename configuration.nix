@@ -55,6 +55,7 @@
     casks = [
       "wezterm"
       "claude-code"
+      "obsidian"
       "opensuperwhisper"
     ];
   };
