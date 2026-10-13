@@ -20,6 +20,8 @@ in
     nerd-fonts.hack
   ];
   fonts.fontconfig.enable = true;
+  # libpq is keg-only in Homebrew, so psql/pg_dump aren't linked onto PATH.
+  home.sessionPath = [ "/opt/homebrew/opt/libpq/bin" ];
   home.sessionVariables.EDITOR = "nvim";
   # ~/.claude/settings.json is untracked (it holds a live API token), so this
   # env var can't live there. Claude Code reads it from the shell env instead.
