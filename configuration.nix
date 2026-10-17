@@ -46,6 +46,7 @@
       "jq"
       "libpq"
       "mise"
+      "poppler"  # pdftotext: finance-manager's statement ingest
       "redis"
       "rtk"
       "uv"
