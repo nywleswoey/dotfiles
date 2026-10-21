@@ -49,6 +49,8 @@
       "poppler"  # pdftotext: finance-manager's statement ingest
       "redis"
       "rtk"
+      "shellcheck"
+      "tmux"
       "uv"
       "zsh"
       "apm"

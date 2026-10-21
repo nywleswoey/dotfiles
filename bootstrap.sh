@@ -60,4 +60,26 @@ sudo "$NIX_BIN" run github:nix-darwin/nix-darwin/nix-darwin-26.05#darwin-rebuild
 # If this still fails with "nix: command not found", open a new terminal
 # (Determinate adds nix to new shells' PATH) and re-run ./bootstrap.sh.
 
+echo "==> Step 5: Firstmate tools (Node via mise, axi CLIs, no-mistakes)"
+# Not in nixpkgs or Homebrew. Re-runnable: each tool is skipped once present.
+NODE_VERSION=22.23.2
+export PATH="$HOME/.local/bin:$PATH"
+if ! command -v mise >/dev/null 2>&1; then
+  echo "    mise not found - expected from Homebrew after the switch; skipping"
+else
+  mise install "node@${NODE_VERSION}"
+  mise use -g "node@${NODE_VERSION}"
+  # `mise exec`, not bare npm: the shims only reach PATH via the zshrc written
+  # by the switch, which this already-running process has not sourced.
+  for tool in tasks-axi quota-axi gh-axi; do
+    mise exec "node@${NODE_VERSION}" -- npm ls -g --depth=0 "$tool" >/dev/null 2>&1 \
+      || mise exec "node@${NODE_VERSION}" -- npm install -g "$tool"
+  done
+fi
+if command -v no-mistakes >/dev/null 2>&1; then
+  echo "    no-mistakes already installed"
+else
+  curl -fsSL https://raw.githubusercontent.com/kunchenguid/no-mistakes/main/docs/install.sh | sh
+fi
+
 echo "==> Done. Use ./rebuild.sh for future changes."

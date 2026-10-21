@@ -180,6 +180,13 @@ Both packages execute with your full user permissions and must be trusted like a
 
 Home Manager deliberately does not manage `~/.pi/agent` itself, or Pi authentication, sessions, trust decisions, caches, npm/git package trees, or any other runtime state. The model overrides contain no credentials or endpoint settings, do not choose a default model, and only take effect after you authenticate Pi yourself. This remains an additive post-video layer: it does not install Pi, a launcher, or package source code into this repository.
 
+## Firstmate tools
+
+`tmux` and `shellcheck` come from Homebrew via `configuration.nix`.
+`bootstrap.sh` step 5 installs the rest, which are not in nixpkgs or Homebrew: `tasks-axi`, `quota-axi` and `gh-axi` through npm, plus `no-mistakes`.
+It is safe to re-run on an existing machine.
+Treehouse is only needed for Firstmate secondmates; Orca supplies task worktrees.
+
 ## Notes
 
 The first time you launch `nvim`, it bootstraps [lazy.nvim](https://github.com/folke/lazy.nvim) by cloning plugins from GitHub.
