@@ -1,0 +1,26 @@
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
+[tools]
+go = "1.26.4"
+jq = "latest"
+node = "22"
+"npm:eslint" = "latest"
+"npm:pnpm" = "latest"
+pnpm = "11.5.3"
+ruby = "3.3.0"
+terraform = "1.10.0"
+
+# Global npm packages (formerly `npm install -g`)
+"npm:@alibaba-group/open-code-review" = "latest"
+"npm:@biomejs/biome" = "latest"
+"npm:@northflank/cli" = "latest"
+"npm:@playwright/cli" = "latest"
+"npm:atlassian-axi" = "latest"
+"npm:chrome-devtools-axi" = "latest"
+"npm:gh-axi" = "latest"
+"npm:glab-axi" = "latest"
+"npm:nx" = "22"
+"npm:quota-axi" = "latest"
+"npm:swagger2openapi" = "latest"
+"npm:tasks-axi" = "latest"

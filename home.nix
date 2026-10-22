@@ -94,6 +94,8 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
+  home.file.".config/mise".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/mise";
   # Untracked (holds a live API token) - the symlink dangles on a fresh clone
   # until Claude Code writes its own. That's fine: the settings this repo cares
   # about are set via home.sessionVariables above.
