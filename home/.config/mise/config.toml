@@ -1,15 +1,16 @@
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
+node.corepack = true
 
 [tools]
 go = "1.26.4"
 jq = "latest"
 node = "22"
 "npm:eslint" = "latest"
-"npm:pnpm" = "latest"
-pnpm = "11.5.3"
+pnpm = "11"
 ruby = "3.3.0"
 terraform = "1.10.0"
+yarn = "1.22.22"
 
 # Global npm packages (formerly `npm install -g`)
 "npm:@alibaba-group/open-code-review" = "latest"
