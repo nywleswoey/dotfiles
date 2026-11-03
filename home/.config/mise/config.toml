@@ -5,12 +5,13 @@ node.corepack = true
 [tools]
 go = "1.26.4"
 jq = "latest"
+# pnpm/yarn precede node so mise binaries win over node's corepack shims on PATH
+pnpm = "11"
+yarn = "1.22.22"
 node = "22"
 "npm:eslint" = "latest"
-pnpm = "11"
 ruby = "3.3.0"
 terraform = "1.10.0"
-yarn = "1.22.22"
 
 # Global npm packages (formerly `npm install -g`)
 "npm:@alibaba-group/open-code-review" = "latest"
